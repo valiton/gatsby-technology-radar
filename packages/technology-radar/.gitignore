@@ -1,0 +1,5 @@
+/*.js
+/*.map
+package-lock.json
+coverage/
+node_modules/

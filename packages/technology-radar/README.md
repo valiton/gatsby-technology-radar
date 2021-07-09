@@ -12,7 +12,20 @@ npm install --save @valiton/technology-radar
 
 ## How to use
 
+```javascript
+const {createRadar} = require('@valiton/technology-radar');
 
+const radar = createRadar(radarName, items);
+```
+
+where items is an array of objects with the following keys:
+ - name
+ - ring
+ - quadrant
+ - isNew
+ - description
+
+radar contains the quadrants with the rings and the items in the structure to draw the radar.
 
 ## License
 MIT

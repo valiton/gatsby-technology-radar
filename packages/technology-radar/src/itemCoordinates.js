@@ -118,3 +118,4 @@ const thereIsCollision = (width, coordinates, allCoordinates) =>
   );
 
 exports.calculateCoordinates = calculateCoordinates;
+exports.toRadian = toRadian;

@@ -1,6 +1,6 @@
 {
   "name": "@valiton/technology-radar",
-  "version": "0.9.1",
+  "version": "0.9.5",
   "description": "library to create the data structure for a technology radar from flat json",
   "main": "index.js",
   "repository": {

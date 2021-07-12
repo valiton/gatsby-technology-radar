@@ -1,0 +1,21 @@
+# Editors
+.idea/
+*.iml
+
+# npm
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# ESLint
+.eslintcache
+
+# Jest
+coverage/
+
+# Source
+*.js
+*.map
+!src/**
+!test/**
+

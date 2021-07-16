@@ -1,14 +1,6 @@
-const {ringWidth} = require('./layout');
+const ringWidthFactors = [0, 6, 11, 14, 16];
 
-const ringWidths = [
-  0,
-  6 * ringWidth,
-  11 * ringWidth,
-  14 * ringWidth,
-  16 * ringWidth
-];
-
-const createRings = items => {
+const createRings = (items, layout) => {
   const rings = {};
   let order = 0;
 
@@ -17,8 +9,8 @@ const createRings = items => {
       rings[item.ring] = {
         name: item.ring,
         order,
-        minRadius: ringWidths[order],
-        maxRadius: ringWidths[order + 1]
+        minRadius: ringWidthFactors[order] * layout.ringWidth,
+        maxRadius: ringWidthFactors[order + 1] * layout.ringWidth
       };
       order += 1;
     }

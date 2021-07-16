@@ -2,6 +2,12 @@ const {checkFields, cleanInput} = require('./checkInput');
 const {createRings} = require('./rings');
 const {createQuadrants} = require('./quadrants');
 const {calculateCoordinates} = require('./itemCoordinates');
+const {
+  ringWidth: defaultRingWidth,
+  idealItemWidth: defaultIdealItemWidth,
+  minItemWidth: defaultMinItemWidth,
+  size: defaultSize
+} = require('./defaultLayout');
 
 const checkItems = items => {
   const checkedAndCleandItems = [];
@@ -18,21 +24,31 @@ const checkItems = items => {
   return checkedAndCleandItems;
 };
 
-const createRadar = (name, items) => {
+const createRadar = (
+  name,
+  items,
+  {
+    ringWidth = defaultRingWidth,
+    idealItemWidth = defaultIdealItemWidth,
+    minItemWidth = defaultMinItemWidth,
+    size = defaultSize
+  } = {}
+) => {
+  const layout = {ringWidth, idealItemWidth, minItemWidth, size};
   const checkedItems = checkItems(items);
-
-  const rings = createRings(checkedItems);
-  const quadrants = createQuadrants(rings, checkedItems);
+  const rings = createRings(checkedItems, layout);
+  const quadrants = createQuadrants(rings, checkedItems, layout);
 
   quadrants.forEach(quadrant => {
     quadrant.rings.forEach(ring => {
-      calculateCoordinates(quadrant, ring);
+      calculateCoordinates(quadrant, ring, layout);
     });
   });
 
   return {
     name,
-    quadrants
+    quadrants,
+    layout
   };
 };
 

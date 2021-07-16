@@ -1,7 +1,6 @@
-const {minItemWidth, center} = require('./layout');
 const Chance = require('chance');
 
-const calculateCoordinates = (quadrant, ring) => {
+const calculateCoordinates = (quadrant, ring, layout) => {
   const sumRing = ring.name.split('').reduce((p, c) => p + c.charCodeAt(0), 0);
   const sumQuadrant = quadrant.name
     .split('')
@@ -20,7 +19,8 @@ const calculateCoordinates = (quadrant, ring) => {
       ring.minRadius,
       ring.maxRadius,
       quadrant.startAngle,
-      allItemCoordinatesInRing
+      allItemCoordinatesInRing,
+      layout
     );
 
     allItemCoordinatesInRing.push(coordinates);
@@ -37,7 +37,8 @@ const findItemCoordinates = (
   minRadius,
   maxRadius,
   startAngle,
-  allItemCoordinatesInRing
+  allItemCoordinatesInRing,
+  layout
 ) => {
   const maxIterations = 200;
   let coordinates = calculateItemCoordinates(
@@ -45,7 +46,8 @@ const findItemCoordinates = (
     item,
     minRadius,
     maxRadius,
-    startAngle
+    startAngle,
+    layout
   );
   let iterationCounter = 0;
   let foundAPlace = false;
@@ -57,7 +59,8 @@ const findItemCoordinates = (
         item,
         minRadius,
         maxRadius,
-        startAngle
+        startAngle,
+        layout
       );
     } else {
       foundAPlace = true;
@@ -66,7 +69,7 @@ const findItemCoordinates = (
     iterationCounter++;
   }
 
-  if (!foundAPlace && item.width > minItemWidth) {
+  if (!foundAPlace && item.width > layout.minItemWidth) {
     item.width -= 1;
     return findItemCoordinates(
       chance,
@@ -74,7 +77,8 @@ const findItemCoordinates = (
       minRadius,
       maxRadius,
       startAngle,
-      allItemCoordinatesInRing
+      allItemCoordinatesInRing,
+      layout
     );
   } else {
     return coordinates;
@@ -86,7 +90,8 @@ const calculateItemCoordinates = (
   item,
   minRadius,
   maxRadius,
-  startAngle
+  startAngle,
+  layout
 ) => {
   const adjustX =
     Math.sin(toRadian(startAngle)) - Math.cos(toRadian(startAngle));
@@ -104,6 +109,7 @@ const calculateItemCoordinates = (
     chance.integer({min: angleDelta, max: 90 - angleDelta})
   );
 
+  const center = layout.size / 2;
   const x = center + radius * Math.cos(angle) * adjustX;
   const y = center + radius * Math.sin(angle) * adjustY;
 

@@ -1,4 +1,3 @@
-const {idealItemWidth} = require('./layout');
 const {toRadian} = require('./itemCoordinates');
 
 const angles = [90, 0, -90, -180];
@@ -6,7 +5,7 @@ const orderNames = ['first', 'second', 'third', 'fourth'];
 
 const compareByOrder = (a, b) => a.order - b.order;
 
-const createQuadrants = (rings, items) => {
+const createQuadrants = (rings, items, layout) => {
   const quadrants = {};
   let quadrantsCreated = 0;
   let itemsCounter = 1;
@@ -32,7 +31,7 @@ const createQuadrants = (rings, items) => {
     }
     quadrants[item.quadrant].rings[item.ring].items.push({
       ...item,
-      width: idealItemWidth,
+      width: layout.idealItemWidth,
       number: itemsCounter
     });
     itemsCounter += 1;
@@ -40,11 +39,9 @@ const createQuadrants = (rings, items) => {
 
   return Object.entries(quadrants)
     .map(([, quadrant]) => ({
-      order: quadrant.order,
-      orderName: quadrant.orderName,
+      order: quadrant.orderName,
       name: quadrant.name,
-      startAngle: quadrant.startAngle,
-      startAngleRadian: quadrant.startAngleRadian,
+      startAngle: quadrant.startAngleRadian,
       rings: Object.entries(quadrant.rings)
         .map(([, ring]) => ({
           ...ring,

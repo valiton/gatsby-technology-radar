@@ -14,6 +14,7 @@ test('It takes name and items', () => {
   expect(radar.name).toBe('radar-name');
   expect(radar.quadrants).toHaveLength(1);
   expect(radar.quadrants[0].name).toBe('quadrant');
+  expect(radar.layout.size).toBe(520);
 });
 
 test('It throws an error if fields are missing', () => {

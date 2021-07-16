@@ -1,6 +1,6 @@
 {
   "name": "@valiton/gatsby-transformer-technology-radar",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "description": "Gatsby transformer for a technology radar",
   "main": "index.js",
   "scripts": {
@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.5.5",
-    "@valiton/technology-radar": "^0.9.6"
+    "@valiton/technology-radar": "^0.9.7"
   },
   "peerDependencies": {
     "gatsby": ">2.0.0",

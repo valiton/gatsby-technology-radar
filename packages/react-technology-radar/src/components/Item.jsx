@@ -2,9 +2,9 @@ import React from 'react';
 import Triangle from './Triangle';
 import Circle from './Circle';
 
-const Item = ({x, y, number, isNew, width, order}) => {
+const Item = ({x, y, number, isNew, width, order, name}) => {
   return (
-    <g className="item-link" id={`item-link-${number}`}>
+    <g className="item-link" id={`item-link-${number}`} data-tip={name}>
       {isNew ? (
         <Triangle x={x} y={y} width={width} order={order} />
       ) : (

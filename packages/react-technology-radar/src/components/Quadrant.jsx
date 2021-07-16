@@ -4,12 +4,12 @@ import Line from './Line';
 import Text from './Text';
 import Item from './Item';
 
-const calcLinePoints = (size, startAngleRadian) => {
-  let startX = size * (1 - (-Math.sin(startAngleRadian) + 1) / 2);
-  let endX = size * (1 - (-Math.sin(startAngleRadian - Math.PI / 2) + 1) / 2);
+const calcLinePoints = (size, startAngle) => {
+  let startX = size * (1 - (-Math.sin(startAngle) + 1) / 2);
+  let endX = size * (1 - (-Math.sin(startAngle - Math.PI / 2) + 1) / 2);
 
-  let startY = size * (1 - (Math.cos(startAngleRadian) + 1) / 2);
-  let endY = size * (1 - (Math.cos(startAngleRadian - Math.PI / 2) + 1) / 2);
+  let startY = size * (1 - (Math.cos(startAngle) + 1) / 2);
+  let endY = size * (1 - (Math.cos(startAngle - Math.PI / 2) + 1) / 2);
 
   if (startY > endY) {
     const aux = endY;
@@ -20,20 +20,33 @@ const calcLinePoints = (size, startAngleRadian) => {
   return {startX, startY, endX, endY};
 };
 
-const Quadrant = ({quadrant, center, size}) => {
+const Quadrant = ({
+  quadrant,
+  center,
+  size,
+  opacity,
+  setHovered,
+  setSelected
+}) => {
   const {startX, startY, endX, endY} = calcLinePoints(
     size,
-    quadrant.startAngleRadian
+    quadrant.startAngle
   );
 
   return (
-    <g className={`quadrant-group quadrant-group-${quadrant.orderName}`}>
+    <g
+      className={`quadrant-group quadrant-group-${quadrant.order}`}
+      style={{opacity: opacity}}
+      onMouseOver={() => setHovered(quadrant.order)}
+      onMouseOut={() => setHovered('none')}
+      onClick={() => setSelected(quadrant.order)}
+    >
       {quadrant.rings.map(ring => (
         <Arc
           key={`quadrant-${quadrant.order}-ring-${ring.order}`}
           minRadius={ring.minRadius}
           maxRadius={ring.maxRadius}
-          startAngleRadian={quadrant.startAngleRadian}
+          startAngle={quadrant.startAngle}
           order={ring.order}
           center={center}
         />
@@ -51,7 +64,11 @@ const Quadrant = ({quadrant, center, size}) => {
         <>
           <Text
             key={`quadrant-${quadrant.order}-ring-${ring.order}-text`}
-            x={center + (ring.minRadius + ring.maxRadius) / 2}
+            x={
+              quadrant.order === 'first' || quadrant.order === 'fourth'
+                ? center + (ring.minRadius + ring.maxRadius) / 2
+                : center - (ring.minRadius + ring.maxRadius) / 2
+            }
             y={center + 4}
             text={ring.name}
           />
@@ -63,7 +80,8 @@ const Quadrant = ({quadrant, center, size}) => {
               number={item.number}
               isNew={item.isNew}
               width={item.width}
-              order={quadrant.orderName}
+              order={quadrant.order}
+              name={item.name}
             />
           ))}
         </>

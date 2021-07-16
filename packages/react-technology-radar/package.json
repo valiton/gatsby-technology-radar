@@ -4,7 +4,7 @@
   "description": "React component to render a technology radar",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint --ext js --ext jsx ./ --cache",
+    "lint": "eslint --ext js --ext jsx ./src --cache",
     "format": "prettier --write '{src,test}/**/*.{js,jsx}'",
     "build": "babel src --out-dir ./ --source-maps",
     "watch": "babel src --out-dir ./ --source-maps --watch",
@@ -33,6 +33,7 @@
   "dependencies": {
     "@babel/runtime": "^7.5.5",
     "d3-shape": "^3.0.1",
+    "react-tooltip": "^4.2.21",
     "styled-components": "^4.0.0"
   },
   "peerDependencies": {

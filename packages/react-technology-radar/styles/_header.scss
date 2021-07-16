@@ -1,7 +1,7 @@
 .radar-header {
   text-align: center;
 
-  .radar-title, .buttons-group, #alternative-buttons {
+  .radar-title, .buttons-group {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -9,60 +9,8 @@
     align-content: space-between;
   }
 
-  .radar-title {
-    background-color: $grey-light;
-    padding: 30px 0;
-
-    display: table;
-    margin: auto;
-    width: 100%;
-
-    .radar-title__text {
-
-      display: table-cell;
-      width: 70%;
-
-      text-align: left;
-      padding-left: 10%;
-
-      h1 {
-        font-size: 55px;
-        font-weight: 900;
-        letter-spacing: -.04em;
-        line-height: 0.8em;
-        margin: 0;
-        text-transform: uppercase;
-      }
-    }
-
-    .radar-title__logo {
-      flex: 0 0 30%;
-      margin-left: auto;
-
-      width: 30%;
-      display: table-cell;
-      vertical-align: middle;
-
-      a {
-        border-bottom: none;
-      }
-
-      img {
-        vertical-align: middle;
-        width: 34%;
-      }
-    }
-  }
-
-
-  .quadrant-btn--group, .multiple-sheet-button-group {
+  .quadrant-btn--group {
     text-align: left;
-    padding-left: 10%;
-  }
-
-  .print-radar-btn, .search-box {
-    margin-left: auto;
-    margin-right: 10%;
   }
 
   .buttons-group {
@@ -70,13 +18,13 @@
   }
 
   .home-link {
-    color: $pink;
+    color: $valiton;
     margin-bottom: 10px;
     line-height: normal;
     cursor: pointer;
     display: inline-block;
     text-align: left;
-    width: 80%;
+    width: 100%;
   }
 
   .button {

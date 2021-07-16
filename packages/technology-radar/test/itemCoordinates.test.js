@@ -16,7 +16,7 @@ test('It calculates coordinates for items in ring', () => {
     {width: 22},
     {width: 22}
   ];
-  const quadrant = {name: 'quadrant', startAngle: 90};
+  const quadrant = {name: 'quadrant', startAngle: Math.PI / 2};
   const ring = {name: 'ring', minRadius: 224, maxRadius: 256, items};
 
   calculateCoordinates(quadrant, ring, {
@@ -26,10 +26,10 @@ test('It calculates coordinates for items in ring', () => {
   });
 
   items.forEach(item => {
-    expect(item.coordinates[0]).toBeGreaterThanOrEqual(0);
+    expect(item.coordinates[0]).toBeGreaterThanOrEqual(300);
     expect(item.coordinates[0]).toBeLessThanOrEqual(600);
     expect(item.coordinates[1]).toBeGreaterThanOrEqual(0);
-    expect(item.coordinates[1]).toBeLessThanOrEqual(600);
+    expect(item.coordinates[1]).toBeLessThanOrEqual(300);
     expect(item.width).toBeLessThanOrEqual(22);
     expect(item.width).toBeGreaterThanOrEqual(12);
   });

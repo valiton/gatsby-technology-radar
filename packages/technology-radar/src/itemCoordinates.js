@@ -93,10 +93,8 @@ const calculateItemCoordinates = (
   startAngle,
   layout
 ) => {
-  const adjustX =
-    Math.sin(toRadian(startAngle)) - Math.cos(toRadian(startAngle));
-  const adjustY =
-    -Math.cos(toRadian(startAngle)) - Math.sin(toRadian(startAngle));
+  const adjustX = Math.sin(startAngle) - Math.cos(startAngle);
+  const adjustY = -Math.cos(startAngle) - Math.sin(startAngle);
 
   const radius = chance.floating({
     min: minRadius + item.width / 2,

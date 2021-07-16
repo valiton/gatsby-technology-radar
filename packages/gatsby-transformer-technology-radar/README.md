@@ -32,12 +32,14 @@ module.exports = {
       resolve: '@valiton/gatsby-transformer-technology-radar',
       options: {
         nodeType: 'RadarCsv',
-        radarName: 'My technology radar'
+        radarName: 'My technology radar',
+        layout: {ringWidth: 16, idealItemWidth: 22, minItemWidth: 11, size: 520} 
       }
     },
   ]
 };
 ```
+Specifying the layout is optional.
 
 ## License
 MIT

@@ -5,9 +5,23 @@ const onCreateNode = (
   pluginOptions
 ) => {
   if (node.internal.type === pluginOptions.nodeType) {
-    const radar = createRadar(pluginOptions.radarName, node.items);
+    let radar;
 
-    const {createNode} = actions;
+    if (pluginOptions.layout) {
+      radar = createRadar(
+        pluginOptions.radarName,
+        node.items,
+        pluginOptions.layout
+      );
+    } else {
+      radar = createRadar(
+        pluginOptions.radarName,
+        node.items,
+        pluginOptions.layout
+      );
+    }
+
+    const {createNode, createParentChildLink} = actions;
 
     const radarNode = {
       ...radar,
@@ -20,6 +34,7 @@ const onCreateNode = (
     };
 
     createNode(radarNode);
+    createParentChildLink({parent: node, child: radarNode});
   }
 };
 

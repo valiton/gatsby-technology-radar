@@ -2,9 +2,31 @@ import React from 'react';
 import Triangle from './Triangle';
 import Circle from './Circle';
 
-const Item = ({x, y, number, isNew, width, order, name}) => {
+const Item = ({
+  x,
+  y,
+  number,
+  isNew,
+  width,
+  order,
+  name,
+  scale,
+  minItemWidth
+}) => {
+  const realScale = 1 / scale;
+
+  if (width * realScale < minItemWidth) {
+    width = minItemWidth / realScale;
+  }
+
   return (
-    <g className="item-link" id={`item-link-${number}`} data-tip={name}>
+    <g
+      className="item-link"
+      id={`item-link-${number}`}
+      data-tip={name}
+      transform={`translate(${(1 - realScale) * x}, ${(1 - realScale) *
+        y}) scale(${realScale})`}
+    >
       {isNew ? (
         <Triangle x={x} y={y} width={width} order={order} />
       ) : (

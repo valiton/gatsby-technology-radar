@@ -3,6 +3,7 @@ import Arc from './Arc';
 import Line from './Line';
 import Text from './Text';
 import Item from './Item';
+import Legend from './Legend';
 
 const calcLinePoints = (size, startAngle) => {
   let startX = size * (1 - (-Math.sin(startAngle) + 1) / 2);
@@ -22,71 +23,99 @@ const calcLinePoints = (size, startAngle) => {
 
 const Quadrant = ({
   quadrant,
-  center,
   size,
+  scale,
   opacity,
   setHovered,
-  setSelected
+  setSelected,
+  selected
 }) => {
   const {startX, startY, endX, endY} = calcLinePoints(
     size,
     quadrant.startAngle
   );
 
-  return (
-    <g
-      className={`quadrant-group quadrant-group-${quadrant.order}`}
-      style={{opacity: opacity}}
-      onMouseOver={() => setHovered(quadrant.order)}
-      onMouseOut={() => setHovered('none')}
-      onClick={() => setSelected(quadrant.order)}
-    >
-      {quadrant.rings.map(ring => (
-        <Arc
-          key={`quadrant-${quadrant.order}-ring-${ring.order}`}
-          minRadius={ring.minRadius}
-          maxRadius={ring.maxRadius}
-          startAngle={quadrant.startAngle}
-          order={ring.order}
-          center={center}
-        />
-      ))}
+  let transform = '';
+  let legend = null;
+  if (selected) {
+    const adjustX =
+      Math.sin(quadrant.startAngle) - Math.cos(quadrant.startAngle);
+    const adjustY =
+      Math.cos(quadrant.startAngle) + Math.sin(quadrant.startAngle);
 
-      <Line
-        x1={center}
-        y1={startY - 2}
-        x2={center}
-        y2={endY + 2}
-        strokeWidth={10}
-      />
-      <Line x1={endX} y1={center} x2={startX} y2={center} strokeWidth={10} />
-      {quadrant.rings.map(ring => (
-        <>
-          <Text
-            key={`quadrant-${quadrant.order}-ring-${ring.order}-text`}
-            x={
-              quadrant.order === 'first' || quadrant.order === 'fourth'
-                ? center + (ring.minRadius + ring.maxRadius) / 2
-                : center - (ring.minRadius + ring.maxRadius) / 2
-            }
-            y={center + 4}
-            text={ring.name}
+    const translateX = (-1 * (1 + adjustX) * size) / 2;
+    const translateY = -1 * (1 - adjustY) * (size / 2 - 7);
+
+    transform = `translate(${translateX},${translateY}) scale(2)`;
+
+    legend = <Legend order={quadrant.order} size={size} scale={scale} />;
+  }
+
+  return (
+    <>
+      <g
+        className={`quadrant-group quadrant-group-${quadrant.order}`}
+        style={{opacity: opacity}}
+        onMouseOver={() => setHovered(quadrant.order)}
+        onMouseOut={() => setHovered('none')}
+        onClick={() => setSelected(quadrant.order)}
+        transform={transform}
+      >
+        {quadrant.rings.map(ring => (
+          <Arc
+            key={`quadrant-${quadrant.order}-ring-${ring.order}`}
+            minRadius={ring.minRadius}
+            maxRadius={ring.maxRadius}
+            startAngle={quadrant.startAngle}
+            order={ring.order}
+            center={size / 2}
           />
-          {ring.items.map(item => (
-            <Item
-              key={`quadrant-item-${item.number}`}
-              x={item.coordinates[0]}
-              y={item.coordinates[1]}
-              number={item.number}
-              isNew={item.isNew}
-              width={item.width}
-              order={quadrant.order}
-              name={item.name}
+        ))}
+
+        <Line
+          x1={size / 2}
+          y1={startY - 2}
+          x2={size / 2}
+          y2={endY + 2}
+          strokeWidth={10}
+        />
+        <Line
+          x1={endX}
+          y1={size / 2}
+          x2={startX}
+          y2={size / 2}
+          strokeWidth={10}
+        />
+        {quadrant.rings.map(ring => (
+          <React.Fragment key={`rind-${ring.order}`}>
+            <Text
+              key={`quadrant-${quadrant.order}-ring-${ring.order}-text`}
+              x={
+                quadrant.order === 'first' || quadrant.order === 'fourth'
+                  ? size / 2 + (ring.minRadius + ring.maxRadius) / 2
+                  : size / 2 - (ring.minRadius + ring.maxRadius) / 2
+              }
+              y={size / 2 + 4}
+              text={ring.name}
             />
-          ))}
-        </>
-      ))}
-    </g>
+            {ring.items.map(item => (
+              <Item
+                key={`quadrant-item-${item.number}`}
+                x={item.coordinates[0]}
+                y={item.coordinates[1]}
+                number={item.number}
+                isNew={item.isNew}
+                width={item.width}
+                scale={scale}
+                order={quadrant.order}
+                name={item.name}
+              />
+            ))}
+          </React.Fragment>
+        ))}
+      </g>
+      {legend}
+    </>
   );
 };
 

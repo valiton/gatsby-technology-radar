@@ -5,7 +5,7 @@ const calcCoordinates = (order, size, scale) => {
   let y = 10;
 
   if (order === 'first') {
-    x = (4 * size) / 5;
+    x = (4 * size) / 5 - 50;
     y = (1 * size) / 5;
   }
 
@@ -20,7 +20,7 @@ const calcCoordinates = (order, size, scale) => {
   }
 
   if (order === 'fourth') {
-    x = (4 * size) / 5;
+    x = (4 * size) / 5 - 50;
     y = (4 * size) / 5;
   }
 

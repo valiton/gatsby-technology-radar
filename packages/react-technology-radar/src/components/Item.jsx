@@ -11,7 +11,8 @@ const Item = ({
   order,
   name,
   scale,
-  minItemWidth
+  minItemWidth,
+  itemTransform
 }) => {
   const realScale = 1 / scale;
 
@@ -19,13 +20,14 @@ const Item = ({
     width = minItemWidth / realScale;
   }
 
+  const transform = `scale(${itemTransform.scale}) translate(${itemTransform.translate * x},${itemTransform.translate * y})`
+
   return (
     <g
       className="item-link"
       id={`item-link-${number}`}
       data-tip={name}
-      transform={`translate(${(1 - realScale) * x}, ${(1 - realScale) *
-        y}) scale(${realScale})`}
+      transform={transform}
     >
       {isNew ? (
         <Triangle x={x} y={y} width={width} order={order} />

@@ -21,6 +21,34 @@ const calcLinePoints = (size, startAngle) => {
   return {startX, startY, endX, endY};
 };
 
+const calcTransformation = (selected, order, startAngle, size, realScale) => {
+  let scale = 1.75 / realScale;
+
+  const adjustX = Math.sin(startAngle) - Math.cos(startAngle)
+  const adjustY = Math.cos(startAngle) + Math.sin(startAngle)
+
+  let transform = ''
+  let itemTransform = {scale: 1, translate: 0}
+
+  if (selected !== 'none') {
+    let translateX;
+    let translateY
+    if (selected === order) {
+      translateX = (-1 * (1 + adjustX) * size / 2 * (scale - 1)) + (-adjustX * (1 - scale / 2) * size)
+      translateY = (-1 * (1 - adjustY) * (size / 2 - 7) * (scale - 1)) - ((1 - adjustY) / 2 * (1 - scale / 2) * size)
+      itemTransform = {scale: 3 / 4, translate: (1 - 3 / 4) / (3 / 4)}
+
+    } else {
+      translateX = (1 - adjustX) / 2 * size * scale / 2 + ((1 - adjustX) / 2 * (1 - scale / 2) * size)
+      translateY = (1 + adjustY) / 2 * size * scale / 2
+      scale = 0;
+    }
+    transform = `translate(${translateX},${translateY}) scale(${scale})`;
+  }
+
+  return {transform, itemTransform}
+}
+
 const Quadrant = ({
   quadrant,
   size,
@@ -35,19 +63,10 @@ const Quadrant = ({
     quadrant.startAngle
   );
 
-  let transform = '';
+  const {transform, itemTransform} = calcTransformation(selected, quadrant.order, quadrant.startAngle, size, scale)
+
   let legend = null;
-  if (selected) {
-    const adjustX =
-      Math.sin(quadrant.startAngle) - Math.cos(quadrant.startAngle);
-    const adjustY =
-      Math.cos(quadrant.startAngle) + Math.sin(quadrant.startAngle);
-
-    const translateX = (-1 * (1 + adjustX) * size) / 2;
-    const translateY = -1 * (1 - adjustY) * (size / 2 - 7);
-
-    transform = `translate(${translateX},${translateY}) scale(2)`;
-
+  if (selected === quadrant.order) {
     legend = <Legend order={quadrant.order} size={size} scale={scale} />;
   }
 
@@ -109,6 +128,7 @@ const Quadrant = ({
                 scale={scale}
                 order={quadrant.order}
                 name={item.name}
+                itemTransform={itemTransform}
               />
             ))}
           </React.Fragment>

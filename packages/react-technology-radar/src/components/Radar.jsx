@@ -83,7 +83,7 @@ const Radar = ({radar: {quadrants, layout}, size, backLinkText}) => {
                   }
                   setHovered={quadrantHovered}
                   setSelected={quadrantSelected}
-                  selected={quadrant.order === selected}
+                  selected={selected}
                 />
               ))}
           </g>

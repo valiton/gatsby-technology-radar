@@ -14,9 +14,14 @@
     right: 0;
 
     .legend {
-      visibility: visible;
-      transition: visibility 1s ease 1s;
+      visibility: hidden;
       color: $black;
+      transition: visibility 0s;
+
+      &.selected {
+        visibility: visible;
+        transition: visibility 0.5s ease 1s;
+      }
     }
 
     path {
@@ -49,6 +54,7 @@
 
     .quadrant-group {
       cursor: pointer;
+      transition: 1s;
     }
 
     circle,
@@ -167,7 +173,7 @@
         .item-description {
           max-height: 0;
           overflow: hidden;
-          width: 300px;
+          width: 220px;
 
           p {
             margin: 0;

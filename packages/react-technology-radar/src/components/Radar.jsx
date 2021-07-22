@@ -24,6 +24,7 @@ const calcAspectRatio = selected => {
 const Radar = ({radar: {quadrants, layout}, size, backLinkText}) => {
   const [hovered, setHovered] = useState('none');
   const [selected, setSelected] = useState('none');
+  const [highlighted, setHighlighted] = useState(0);
 
   const quadrantHovered = quadrant => {
     setHovered(quadrant);
@@ -40,7 +41,13 @@ const Radar = ({radar: {quadrants, layout}, size, backLinkText}) => {
   }
 
   const scale = size / layout.size;
-
+  const selectedQuadrantStartAngle = quadrants.reduce((angle, quadrant) => {
+    console.log(quadrant);
+    if (quadrant.order === selected) {
+      return quadrant.startAngle;
+    }
+    return angle;
+  }, 0);
   return (
     <>
       <div className="radar-header">
@@ -68,31 +75,33 @@ const Radar = ({radar: {quadrants, layout}, size, backLinkText}) => {
           preserveAspectRatio={calcAspectRatio(selected)}
         >
           <g>
-            {quadrants
-              .filter(
-                quadrant => selected === 'none' || selected === quadrant.order
-              )
-              .map(quadrant => (
-                <Quadrant
-                  key={quadrant.order}
-                  quadrant={quadrant}
-                  size={layout.size}
-                  scale={scale}
-                  opacity={
-                    quadrant.order === hovered || hovered === 'none' ? 1 : 0.3
-                  }
-                  setHovered={quadrantHovered}
-                  setSelected={quadrantSelected}
-                  selected={selected}
-                />
-              ))}
+            {quadrants.map(quadrant => (
+              <Quadrant
+                key={quadrant.order}
+                quadrant={quadrant}
+                size={layout.size}
+                scale={scale}
+                opacity={
+                  quadrant.order === hovered || hovered === 'none' ? 1 : 0.3
+                }
+                setHovered={quadrantHovered}
+                setSelected={quadrantSelected}
+                selected={selected}
+                selectedQuadrantStartAngle={selectedQuadrantStartAngle}
+                highlighted={highlighted}
+              />
+            ))}
           </g>
         </RadarContents>
-        {quadrants
-          .filter(quadrant => selected === quadrant.order)
-          .map(quadrant => (
-            <QuadrantTable key={quadrant.order} quadrant={quadrant} />
-          ))}
+        {quadrants.map(quadrant => (
+          <QuadrantTable
+            key={quadrant.order}
+            quadrant={quadrant}
+            selected={selected === quadrant.order}
+            highlighted={highlighted}
+            setHighlighted={setHighlighted}
+          />
+        ))}
       </div>
       <ReactTooltip key={selected} />
     </>

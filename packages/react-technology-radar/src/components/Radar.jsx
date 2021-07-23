@@ -42,7 +42,6 @@ const Radar = ({radar: {quadrants, layout}, size, backLinkText}) => {
 
   const scale = size / layout.size;
   const selectedQuadrantStartAngle = quadrants.reduce((angle, quadrant) => {
-    console.log(quadrant);
     if (quadrant.order === selected) {
       return quadrant.startAngle;
     }

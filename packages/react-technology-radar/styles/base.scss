@@ -147,7 +147,7 @@
     &.selected {
       position: relative;
       max-height: 10000px;
-      max-width: 20%;
+      max-width: 30%;
     }
 
     ul {
@@ -173,7 +173,7 @@
         .item-description {
           max-height: 0;
           overflow: hidden;
-          width: 220px;
+          width: 260px;
 
           p {
             margin: 0;

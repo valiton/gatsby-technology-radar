@@ -22,8 +22,8 @@ const calcLinePoints = (size, startAngle) => {
   return {startX, startY, endX, endY};
 };
 
-const calcTransformation = (selected, order, startAngle, size, realScale) => {
-  let scale = 1.5 / realScale;
+const calcTransformation = (selected, order, startAngle, size) => {
+  let scale = 1.8;
 
   const adjustX = Math.sin(startAngle) - Math.cos(startAngle);
   const adjustY = Math.cos(startAngle) + Math.sin(startAngle);
@@ -75,8 +75,7 @@ const Quadrant = ({
     selected,
     quadrant.order,
     selectedQuadrantStartAngle,
-    size,
-    scale
+    size
   );
 
   return (

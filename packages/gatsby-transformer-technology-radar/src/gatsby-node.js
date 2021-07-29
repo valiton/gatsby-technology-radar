@@ -1,11 +1,17 @@
 const {createRadar} = require(`@valiton/technology-radar`);
 
-const unstable_shouldOnCreateNode = ({node}, pluginOptions) => (node.internal.type === pluginOptions.nodeType);
+const unstable_shouldOnCreateNode = ({node}, pluginOptions) => {
+  return node.internal.type === pluginOptions.nodeType;
+};
 
 const onCreateNode = (
   {node, actions, createNodeId, createContentDigest},
   pluginOptions
 ) => {
+  if (!unstable_shouldOnCreateNode({node}, pluginOptions)) {
+    return;
+  }
+
   let radar;
 
   if (pluginOptions.layout) {
@@ -15,11 +21,7 @@ const onCreateNode = (
       pluginOptions.layout
     );
   } else {
-    radar = createRadar(
-      pluginOptions.radarName,
-      node.items,
-      pluginOptions.layout
-    );
+    radar = createRadar(pluginOptions.radarName, node.items);
   }
 
   const {createNode, createParentChildLink} = actions;
@@ -28,6 +30,7 @@ const onCreateNode = (
     ...radar,
     id: createNodeId(`${node.id} Radar`),
     children: [],
+    parent: node.id,
     internal: {
       contentDigest: createContentDigest(radar),
       type: `TechnologyRadar`

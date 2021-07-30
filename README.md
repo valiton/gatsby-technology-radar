@@ -48,6 +48,10 @@ export const query = graphql`
 `;
 ```
 
+## Example Preview
+
+You can find a working example on our website: https://www.valiton.com/technology-radar
+
 ## License
 
 MIT

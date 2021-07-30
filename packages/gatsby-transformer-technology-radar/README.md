@@ -1,7 +1,9 @@
 # gatsby-transformer-technology-radar
+
 Gatsby plugin for displaying a technology radar on your website inspired by https://github.com/thoughtworks/build-your-own-radar.
 
 ## Install
+
 This plugin can be installed by using:
 
 ```
@@ -9,6 +11,7 @@ npm install --save @valiton/gatsby-transformer-technology-radar
 ```
 
 ## How to use
+
 This plugin requires your technology radar data to be present as a node created by gatsby-transformer-csv, so if you added 
 your technology radar csv file as src/techradar/radar.csv use the following configuration:
 
@@ -21,6 +24,7 @@ module.exports = {
       options: {
         name: 'radar',
         path: 'src/techradar'
+      }    
     },
     {
       resolve: 'gatsby-transformer-csv',
@@ -41,5 +45,10 @@ module.exports = {
 ```
 Specifying the layout is optional.
 
+## Live demo
+
+https://www.valiton.com/technology-radar
+
 ## License
+
 MIT

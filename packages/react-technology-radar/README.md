@@ -17,12 +17,16 @@ import Radar from '@valiton/react-technology-radar'
 
 const MyRadar = (radar, size) => (
     <Radar radar={radar} size={size} backLinkText="Back" />
-}
+)
 ```
 
 where radar is the data for the radar which can be created from a flat item list with @valiton/technology-radar and size
 is the size for the radar in pixel.
 
+## Live demo
+
+https://www.valiton.com/technology-radar
 
 ## License
+
 MIT

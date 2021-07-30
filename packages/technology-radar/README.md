@@ -1,9 +1,11 @@
 # technology-radar
+
 Library to create the data structure of a technology radar from json (imported e.g. from a csv file).
 
 Inspired by https://github.com/thoughtworks/build-your-own-radar.
 
 ## Install
+
 This library can be installed by using:
 
 ```
@@ -43,6 +45,10 @@ const radar = createRadar(
 );
 ```
 
+## Live demo
+
+https://www.valiton.com/technology-radar (with @valiton/gatsby-transformer-technology-radar and @valiton/react-technology-radar)
 
 ## License
+
 MIT

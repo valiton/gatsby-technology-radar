@@ -1,6 +1,6 @@
 {
   "name": "@valiton/gatsby-transformer-technology-radar",
-  "version": "0.9.9",
+  "version": "0.9.10",
   "description": "Gatsby transformer for a technology radar",
   "main": "index.js",
   "scripts": {

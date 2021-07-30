@@ -33,7 +33,9 @@ const QuadrantTable = ({quadrant, selected, highlighted, setHighlighted}) => {
                     item.number === expandedItem ? 'expanded' : ''
                   }`}
                 >
-                  {item.description ? <p>{item.description}</p> : null}
+                  {item.description ? (
+                    <p dangerouslySetInnerHTML={{__html: item.description}} />
+                  ) : null}
                 </div>
               </li>
             ))}

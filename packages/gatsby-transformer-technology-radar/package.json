@@ -1,6 +1,6 @@
 {
   "name": "@valiton/gatsby-transformer-technology-radar",
-  "version": "0.9.10",
+  "version": "1.0.0",
   "description": "Gatsby transformer for a technology radar",
   "main": "index.js",
   "scripts": {
@@ -17,20 +17,9 @@
   ],
   "author": "Uwe Jäger <uwe.jaeger@valiton.com>",
   "license": "MIT",
-  "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-transform-runtime": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.3.0",
-    "eslint-plugin-babel": "^5.3.0",
-    "jest": "^24.9.0",
-    "prettier": "^1.18.2"
-  },
   "dependencies": {
     "@babel/runtime": "^7.5.5",
-    "@valiton/technology-radar": "^0.9.7"
+    "@valiton/technology-radar": "file:../technology-radar"
   },
   "peerDependencies": {
     "gatsby": ">2.0.0",

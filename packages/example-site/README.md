@@ -3,8 +3,8 @@
 ## Develop
 
 ```shell
+npm install
 cd packages/example-site
-npx lerna bootstrap
 npm run develop
 ```
 

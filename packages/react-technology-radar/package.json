@@ -1,6 +1,6 @@
 {
   "name": "@valiton/react-technology-radar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React component to render a technology radar",
   "main": "index.js",
   "scripts": {

@@ -55,3 +55,17 @@ https://www.valiton.com/technology-radar
 ## License
 
 MIT
+
+## Development
+
+### Install dependencies
+
+```shell
+npm install
+```
+
+### Publish new version
+
+```shell
+npx lerna publish --no-verify-access --force-publish
+```

@@ -14,7 +14,16 @@
   }
 
   .buttons-group {
-    padding: 15px 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: space-between;
+
+    @media (min-width: 992px) {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
   .home-link {
@@ -29,14 +38,19 @@
 
   .button {
     text-transform: capitalize;
-    margin-right: 20px;
+    margin-right: 0;
     border-radius: 2px;
     padding: 10px 20px;
     cursor: pointer;
     transition: all .2s ease-out;
-
     background-color: $grey-light;
     color: $black;
+    margin-bottom: 10px;
+
+    @media (min-width: 992px) {
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
 
     &.no-capitalize {
       text-transform: none;

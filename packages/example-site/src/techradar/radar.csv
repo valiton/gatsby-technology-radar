@@ -1,0 +1,88 @@
+name,ring,quadrant,isNew,description
+Doctrine,Adopt,Languages & Frameworks,FALSE,
+Eslint,Adopt,Languages & Frameworks,,"A tool for static code analysis which replaced Jasmine some time ago. We often use it together with Prettier and the Airbnb style guide."
+Gatsby.js,Adopt,Languages & Frameworks,,
+gensim,Adopt,Languages & Frameworks,,
+Huggingface Transformers,Adopt,Languages & Frameworks,,
+Jest,Adopt,Languages & Frameworks,FALSE,
+Pandas,Adopt,Languages & Frameworks,,"A program library for the Python programming language that provides tools for managing data and analyzing it."
+React,Adopt,Languages & Frameworks,FALSE,
+React Testing Library,Adopt,Languages & Frameworks,FALSE,
+Sass,Adopt,Languages & Frameworks,,
+Serverless Framework,Adopt,Languages & Frameworks,,"We use the serverless framework pretty much everywhere we deploy AWS Lambda, for example. We also try to stay as provider independent as possible in the code."
+spacy,Adopt,Languages & Frameworks,,
+Symfony,Adopt,Languages & Frameworks,FALSE,
+Terraform,Adopt,Languages & Frameworks,,"Terraform is an Infrastructure as code (IaC) tool that lets you create, modify, and version infrastructures securely and efficiently. We use it extensively in all our cloud projects, and actually deploy any type of infrastructure in the cloud only using terraform."
+Vue.js,Adopt,Languages & Frameworks,,
+Apache Airflow,Adopt,Platforms,,"Open Source Workflow-Management-Platform, we use it heavily in most data projects."
+Apache superset,Adopt,Tools,,"Apache Superset is an open-source software cloud-native application for data exploration and data visualization able to handle data at petabyte scale."
+AWS Organizations,Adopt,Platforms,TRUE,"We use AWS Organizations to maintain and govern our AWS infrastructure and the one of our customers. It enables us to simplify plenty of everyday tasks and supports us in applying our security standards."
+dbt,Adopt,Platforms,,"Command line tool that enables data analysts and engineers to transform data in their warehouse more effectively. We use it mostly in combination with Snowflake."
+Detectify,Adopt,Platforms,FALSE,
+Elasticsearch,Adopt,Platforms,,"Distributed Search Engine, mainly a RESTful wrapper around Apache Lucene. We rely on it in most of our Logging-Infrastructure."
+Snowflake,Adopt,Platforms,,"Snowflake offers a cloud-based data storage and analytics service, commonly referred to as 'data warehouse-as-a-service'. We use Snowflake in many of our data projects, and often in combination with dbt"
+Tideways,Adopt,Platforms,FALSE,
+Clean Code,Adopt,Techniques,FALSE,
+OpenAPI,Adopt,Techniques,FALSE,
+Performance Testing Frontend,Adopt,Techniques,,
+Pipelines as code,Adopt,Techniques,,"The Pipeline as code technique advocates that the deployment pipeline configuration for building, testing, and deploying our applications or infrastructure should be treated as code.They should be placed under source control and best modularized into reusable components."
+Gitlab,Adopt,Tools,FALSE,"Gitlab is one of our bread and butter tools. For years we have been using the Community Edition for source code management, CI/CD and package management, and continue to be convinced by the growing feature set."
+Grafana,Adopt,Tools,,"Composable Platform for monitoring and observability which we use in a lot of our projects to monitor our infrastructure"
+Harbor,Adopt,Tools,FALSE,"A cloud native registry project that stores, signs, and scans content. Harbor extends the open source Docker Distribution by adding the functionalities usually required by users such as security, identity and management. We use it in projects which are not running in the cloud."
+Helm,Adopt,Tools,FALSE,"Helm is a package manager for Kubernetes and helps us manage our applications running in a Kubernetes cluster. Using Helm charts helps us to standardize workflows and reduces complexity."
+Kubernetes,Adopt,Tools,FALSE,
+prodigy,Adopt,Tools,,
+Prometheus,Adopt,Tools,,"Prometheus is a software application used for event monitoring and alerting. It records real-time metrics in a time series database (allowing for high dimensionality) built using a HTTP pull model, with flexible queries and real-time alerting."
+RabbitMQ,Adopt,Tools,FALSE,
+Redis,Adopt,Tools,FALSE,
+Solr,Adopt,Tools,FALSE,
+Sonarqube,Adopt,Tools,FALSE,
+Snowplow,Adopt,Tools,,"Snowplow Analytics is an open-source enterprise event-level analytics platform that enables data collection from multiple platforms for advanced data analytics. At the moment we see Snowplow as the most suitable building block for data collection, in order to be able to detach from large paid analytics products."
+webpack,Adopt,Tools,FALSE,"A module bundler for JavaScript and frontend elements. The essential task is to merge files for use in the browser and bundle them into one file. Webpack has developed very well over the last few years, so we use it in many of our larger code bases"
+Cube.js,Trial,Languages & Frameworks,FALSE,
+next.js,Trial,Languages & Frameworks,FALSE,
+post-css,Trial,Languages & Frameworks,FALSE,
+PyTorch,Trial,Languages & Frameworks,,
+RxJS,Trial,Languages & Frameworks,FALSE,
+Spark,Trial,Languages & Frameworks,,"Enables us to automatically distribute our data processing across multiple machines"
+Tailwind CSS,Trial,Languages & Frameworks,FALSE,"TailwindCSS follows the utility-first approach of Atomic Design Methodology. Unlike heavyweight frameworks like Bootstrap and Bulma, Tailwind CSS classes with built-in design system can be flexibly combined making it easy to create custom designs. Tailwind works with any JavaScript framework or even plain HTML, often reduces the amount of CSS required by a fraction and produces very small stylesheets through CSS purging (often < 10KB)."
+Apache Kafka,Trial,Platforms,,"Messaging and streaming platform for highly scalable systems."
+AWS Sagemaker,Trial,Platforms,,
+Flood.io,Trial,Platforms,FALSE,
+Istio,Trial,Platforms,,
+C4Model,Trial,Techniques,,"The C4 model is an 'abstraction-first' approach to diagramming software architecture, based upon abstractions that reflect how software architects and developers think about and build software. The small set of abstractions and diagram types makes the C4 model easy to learn and use."
+Container Security Scanning,Trial,Techniques,FALSE,
+Continuous Delivery,Trial,Techniques,FALSE,
+Load Testing,Trial,Techniques,FALSE,
+OpenTelemetry,Trial,Techniques,,"A vendor-agnostic API to help developers easily instrument tracing into their code base."
+Software Composition Analyses,Trial,Techniques,FALSE,
+Static Application Security testing (SAST),Trial,Techniques,FALSE,
+Clair,Trial,Tools,FALSE,
+Cucumber,Trial,Tools,,
+Cypress,Trial,Tools,FALSE,"Cypress is a fast and reliable tool for testing anything that runs in a browser. The developer friendly interface and its possibilities around time travelling while making it easy to debug makes this our tool of choice in that area."
+DVC,Trial,Tools,,
+Elastic Stack,Trial,Tools,FALSE,"With the Elastic Stack, we can reliably and securely capture data from any source and in any format, and then search, analyze, and visualize it in real time."
+GitHub Actions,Trial,Tools,,"GitHub Actions helps you build, test, and deploy applications, but you can also use it to automate other tasks common to your developer workflows: triaging and managing issues, automating releases, collaborating with your user base, and more."
+Kiali,Trial,Tools,,"Kiali is a management console for Istio-based service mesh. It provides dashboards, observability and lets you to operate your mesh with robust configuration and validation capabilities."
+Rancher,Trial,Tools,,"Open-source multi-cluster orchestration platform, lets operations teams deploy, manage and secure enterprise Kubernetes. We use it in our data center for the setup of our internal toolings."
+Skaffold,Trial,Tools,,"Skaffold supports us in our Kubernetes and Helm landscapes by helping us build, push and deploy applications. Currently we see it particularly well suited for programming languages that do not need to be compiled."
+Renovate,Trial,Tools,TRUE,"We use Renovate (https://renovatebot.com/) to update our project dependencies using pull requests. This helps keeping track of outdated dependencies and minimises the work needed for updates."
+Wiki.JS,Trial,Tools,,
+ARGO Project,Assess,Languages & Frameworks,,"Argo is a project which, with the areas of workflow management, eventing and CI/CD, brings with it several aspects that are of interest to us. We would like to take the opportunity to put these to the test and compare them with our established tools (e.g. Airflow)."
+loft.sh,Assess,Platforms,TRUE,"Loft enables platform teams in enterprises to provide software engineers with self-service access to Kubernetes."
+Domain Driven Design,Assess,Techniques,,
+Functional programming,Assess,Techniques,,"Functional Programming is a paradigm which is increasingly used in modern programming languages. Pure functions and immutability allow to write easily understandable, modular and fault tolerant code. We use functional programming to limit side effects and to be able to combine our code modules easily and test them well."
+Infrastructure as code Testautomation,Assess,Techniques,,"We rely on IaC with Terraform in our cloud projects. The larger the infrastructures there become, the more important automated testing of the landscapes created with code becomes here as well. Terratest currently seems to be emerging as a tool for this."
+Monorepo,Assess,Techniques,TRUE,"In many projects, we make more intensive use of the capabilities of various package managers and the associated build and deployment workflows. At one point or another, however, we also get into the so-called 'dependency hell' with these approaches. When the opportunity arises, we would like to evaluate in a suitable project whether the approach of a monorepository can support us here. We are also thinking about the support of tools such as lerna.js."
+SBOM,Assess,Techniques,TRUE,"In order to keep track of components used in our projects we look into mechanisms to create and maintain a Software Bill of Material. This will help when checking for vulnerabilities and license conformance."
+Alternatives for Docker for Desktop,Assess,Tools,TRUE,"We evaluate tools like Podman, Minikube, or Rancher Desktop to see if they are suitable alternatives for Docker for Desktop. However Docker for Desktop might remain the tool of choice after all."
+Atlantis,Assess,Tools,TRUE,"Atlantis is a tool which promises to help automating a pull request workflow for deploying terraform code with GitLab/Github pipelines. Thus far we have tried implementing such a workflow using only the pipelines themselves. Past efforts have proven to be difficult to mange with Terraform repositories that have multiple independently-managed infrastructure stacks. Atlantis supposedly includes functionality that detects and deploys only modified stacks and might help us build a better workflow around Terraform."
+greatexpectations,Assess,Tools,,
+Hashicorp Vault,Assess,Tools,TRUE,"We have long separated keys and secrets from source code management in our development process. We already use the in-house service KMS in our AWS projects for the Secrets as a Service approach. With Hashicorp Vault, we would also like to use a tool for the central management of secrets where we do not operate in the AWS Cloud."
+Open Policy Agent,Assess,Tools,,"Open Policy Agent is a general policy engine that can uniformly implement policy across the entire stack. OPA provides a high-level declarative language that allows you to specify policies as code."
+vcluster,Assess,Tools,TRUE,"Virtual clusters are fully working Kubernetes clusters that run on top of other Kubernetes clusters. Compared to fully separate 'real' clusters, virtual clusters do not have their own node pools. Instead, they are scheduling workloads inside the underlying cluster while having their own separate control plane."
+Angular,Hold,Languages & Frameworks,,"Framework for building modern mobile and desktop applications. Due to the larger community, we decided to focus on React and Vue.js, and therefore put Angular on hold."
+Less,Hold,Languages & Frameworks,FALSE,
+Capistrano,Hold,Tools,,
+Chef,Hold,Tools,FALSE,
+Selenium,Hold,Tools,FALSE,"Selenium is still one of the standard tools for testing web interfaces. However, we have had very positive experiences with the cypress framework and would currently prefer it for new projects."

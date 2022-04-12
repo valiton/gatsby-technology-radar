@@ -2,6 +2,8 @@
   "packages": [
     "packages/*"
   ],
-  "version": "1.0.3",
-  "npmClientArgs": ["--no-verify-access"]
+  "version": "1.0.4",
+  "npmClientArgs": [
+    "--no-verify-access"
+  ]
 }

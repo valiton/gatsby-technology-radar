@@ -9,7 +9,9 @@ const IndexPage = ({data: {technologyRadar}}) => {
       <h1>
         Techradar
       </h1>
-      <Radar radar={technologyRadar.nodes[0]} size={520} backLinkText="Back" />
+      <div style={{maxWidth: 1000, marginLeft: "auto", marginRight: "auto"}}>
+        <Radar radar={technologyRadar.nodes[0]} size={1000} backLinkText="Back" />
+      </div>
     </main>
   )
 }

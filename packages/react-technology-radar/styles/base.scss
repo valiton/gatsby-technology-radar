@@ -10,11 +10,9 @@
     margin: 0 auto;
     transition: all 1s ease;
 
-    @media (min-width: 992px) {
-      position: absolute;
-      left: 0;
-      right: 0;
-    }
+    position: absolute;
+    left: 0;
+    right: 0;
 
     .legend {
       visibility: hidden;
@@ -125,44 +123,32 @@
 
     &.first {
       &.selected {
-        @media (min-width: 992px) {
-          float: right;
-        }
+        float: right;
       }
     }
 
     &.second {
       &.selected {
-        @media (min-width: 992px) {
-          float: left;
-        }
+        float: left;
       }
     }
 
     &.third {
       &.selected {
-        @media (min-width: 992px) {
-          float: left;
-        }
+        float: left;
       }
     }
 
     &.fourth {
       &.selected {
-        @media (min-width: 992px) {
-          float: right;
-        }
+        float: right;
       }
     }
 
     &.selected {
       position: relative;
       max-height: 10000px;
-      max-width: 100%;
-
-      @media (min-width: 992px) {
-        max-width: 30%;
-      }
+      max-width: 20%;
     }
 
     ul {

@@ -23,7 +23,7 @@ const calcLinePoints = (size, startAngle) => {
 };
 
 const calcTransformation = (selected, order, startAngle, size) => {
-  let scale = 1.8;
+  let scale = 1.5;
 
   const adjustX = Math.sin(startAngle) - Math.cos(startAngle);
   const adjustY = Math.cos(startAngle) + Math.sin(startAngle);

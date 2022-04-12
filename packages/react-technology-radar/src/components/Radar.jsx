@@ -65,11 +65,9 @@ const Radar = ({radar: {quadrants, layout}, size, backLinkText}) => {
         </div>
         {homeLink}
       </div>
-      <div id="radar" style={{height: `${size + 40}px`}}>
+      <div id="radar">
         <RadarContents
           id="radar-plot"
-          width="100%"
-          height={`${size + 20}`}
           viewBox={`0 0 ${layout.size} ${layout.size}`}
           preserveAspectRatio={calcAspectRatio(selected)}
         >

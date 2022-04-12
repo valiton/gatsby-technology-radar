@@ -5,23 +5,23 @@ const calcCoordinates = (order, size) => {
   let y = 10;
 
   if (order === 'first') {
-    x = (4 * size) / 5 - 50;
-    y = (1 * size) / 5;
+    x = (4 * size) / 5 - 250;
+    y = (1 * size) / 5 - 100;
   }
 
   if (order === 'second') {
-    x = (1 * size) / 5 - 15;
-    y = (1 * size) / 5 - 20;
+    x = (1 * size) / 5 + 150;
+    y = (1 * size) / 5 - 100;
   }
 
   if (order === 'third') {
-    x = (1 * size) / 5 - 15;
-    y = (4 * size) / 5 + 15;
+    x = (1 * size) / 5 + 150;
+    y = (4 * size) / 5 - 100;
   }
 
   if (order === 'fourth') {
-    x = (4 * size) / 5 - 50;
-    y = (4 * size) / 5;
+    x = (4 * size) / 5 - 250;
+    y = (4 * size) / 5 - 100;
   }
 
   return {x, y};

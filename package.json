@@ -1,0 +1,26 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.14.5",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.3.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-react": "^7.24.0",
+    "jest": "^24.9.0",
+    "lerna": "^4.0.0",
+    "prettier": "^1.18.2",
+    "react": "^16.14.0 || ^17.0.0",
+    "react-dom": "^16.14.0 || ^17.0.0"
+  },
+  "dependencies": {
+    "@valiton/gatsby-transformer-technology-radar": "file:packages/gatsby-transformer-technology-radar",
+    "@valiton/react-technology-radar": "file:packages/react-technology-radar",
+    "@valiton/technology-radar": "file:packages/technology-radar",
+    "technology-radar-sample-site": "file:packages/example-site"
+  }
+}

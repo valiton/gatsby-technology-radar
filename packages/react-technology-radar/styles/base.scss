@@ -9,6 +9,7 @@
   svg#radar-plot {
     margin: 0 auto;
     transition: all 1s ease;
+
     position: absolute;
     left: 0;
     right: 0;
@@ -147,7 +148,7 @@
     &.selected {
       position: relative;
       max-height: 10000px;
-      max-width: 30%;
+      max-width: 20%;
     }
 
     ul {

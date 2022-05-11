@@ -1,6 +1,6 @@
 {
   "name": "@valiton/react-technology-radar",
-  "version": "0.9.5",
+  "version": "1.0.7",
   "description": "React component to render a technology radar",
   "main": "index.js",
   "scripts": {
@@ -15,21 +15,6 @@
   ],
   "author": "Uwe Jäger <uwe.jaeger@valiton.com>",
   "license": "MIT",
-  "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-transform-runtime": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.14.5",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.3.0",
-    "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-react": "^7.24.0",
-    "jest": "^24.9.0",
-    "prettier": "^1.18.2",
-    "react": "^16.14.0 || ^17.0.0",
-    "react-dom": "^16.14.0 || ^17.0.0"
-  },
   "dependencies": {
     "@babel/runtime": "^7.5.5",
     "d3-shape": "^3.0.1",
@@ -43,5 +28,6 @@
   },
   "jest": {
     "collectCoverage": true
-  }
+  },
+  "gitHead": "ec7b94f1d7bc63f80bcefafaa3bd56d890910ae8"
 }

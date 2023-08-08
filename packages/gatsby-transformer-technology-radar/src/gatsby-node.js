@@ -1,6 +1,6 @@
 const {createRadar} = require(`@valiton/technology-radar`);
 
-const unstable_shouldOnCreateNode = ({node}, pluginOptions) => {
+const shouldOnCreateNode = ({node}, pluginOptions) => {
   return node.internal.type === pluginOptions.nodeType;
 };
 
@@ -8,7 +8,7 @@ const onCreateNode = (
   {node, actions, createNodeId, createContentDigest},
   pluginOptions
 ) => {
-  if (!unstable_shouldOnCreateNode({node}, pluginOptions)) {
+  if (!shouldOnCreateNode({node}, pluginOptions)) {
     return;
   }
 
@@ -42,4 +42,4 @@ const onCreateNode = (
 };
 
 exports.onCreateNode = onCreateNode;
-exports.unstable_shouldOnCreateNode = unstable_shouldOnCreateNode;
+exports.shouldOnCreateNode = shouldOnCreateNode;

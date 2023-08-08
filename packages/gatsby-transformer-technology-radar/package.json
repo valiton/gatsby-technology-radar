@@ -19,12 +19,12 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.5.5",
-    "@valiton/technology-radar": "^1.0.9"
+    "@valiton/technology-radar": "file:../technology-radar"
   },
   "peerDependencies": {
-    "gatsby": ">2.0.0",
-    "gatsby-source-filesystem": ">2.0.0",
-    "gatsby-transformer-csv": ">2.0.0"
+    "gatsby": ">=5.0.0",
+    "gatsby-source-filesystem": ">=5.0.0",
+    "gatsby-transformer-csv": ">=5.0.0"
   },
   "jest": {
     "collectCoverage": true

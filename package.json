@@ -14,13 +14,11 @@
     "jest": "^24.9.0",
     "lerna": "^4.0.0",
     "prettier": "^1.18.2",
-    "react": "^16.14.0 || ^17.0.0",
-    "react-dom": "^16.14.0 || ^17.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
-  "dependencies": {
-    "@valiton/gatsby-transformer-technology-radar": "file:packages/gatsby-transformer-technology-radar",
-    "@valiton/react-technology-radar": "file:packages/react-technology-radar",
-    "@valiton/technology-radar": "file:packages/technology-radar",
-    "technology-radar-sample-site": "file:packages/example-site"
-  }
+  "scripts": {
+    "build": "lerna run build"
+  },
+  "workspaces": ["packages/*"]
 }

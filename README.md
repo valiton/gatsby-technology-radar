@@ -64,6 +64,18 @@ MIT
 npm install
 ```
 
+### Build
+
+```shell
+npm run build
+```
+
+### Run example site
+
+```shell
+npm run develop --workspace packages/example-site
+```
+
 ### Publish new version
 
 ```shell

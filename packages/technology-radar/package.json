@@ -1,6 +1,6 @@
 {
   "name": "@valiton/technology-radar",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "library to create the data structure for a technology radar from flat json",
   "main": "index.js",
   "repository": {
@@ -28,5 +28,5 @@
   "jest": {
     "collectCoverage": true
   },
-  "gitHead": "ec7b94f1d7bc63f80bcefafaa3bd56d890910ae8"
+  "gitHead": "e387ceeb3432709fe45ed7ff251a4c8676aa7c7b"
 }

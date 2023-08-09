@@ -1,6 +1,6 @@
 {
   "name": "@valiton/react-technology-radar",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "React component to render a technology radar",
   "main": "index.js",
   "scripts": {
@@ -29,5 +29,5 @@
   "jest": {
     "collectCoverage": true
   },
-  "gitHead": "ec7b94f1d7bc63f80bcefafaa3bd56d890910ae8"
+  "gitHead": "e387ceeb3432709fe45ed7ff251a4c8676aa7c7b"
 }

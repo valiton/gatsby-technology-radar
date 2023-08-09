@@ -19,7 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.5.5",
-    "@valiton/technology-radar": "file:../technology-radar"
+    "@valiton/technology-radar": "*"
   },
   "peerDependencies": {
     "gatsby": ">=5.0.0",

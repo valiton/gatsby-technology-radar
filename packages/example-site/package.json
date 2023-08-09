@@ -1,6 +1,6 @@
 {
   "name": "technology-radar-sample-site",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "private": true,
   "description": "technology-radar-sample-site",
   "author": "Uwe Jäger",
@@ -15,8 +15,8 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@valiton/gatsby-transformer-technology-radar": "^1.1.2",
-    "@valiton/react-technology-radar": "^1.1.2",
+    "@valiton/gatsby-transformer-technology-radar": "^1.1.3",
+    "@valiton/react-technology-radar": "^1.1.3",
     "gatsby": "^5.11.0",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-react-helmet": "^6.11.0",
